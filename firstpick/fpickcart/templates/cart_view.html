@@ -1,0 +1,14 @@
+{%load static%}
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>following items are added :</p>
+{%for item in items%}
+Name:{{item.name}}
+Price:{{item.price}}
+<br/>
+{%endfor%}
+</body>
+</html>

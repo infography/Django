@@ -1,0 +1,9 @@
+@ Infography Technologies: Lalitpur-10, Nepal
+
+# The sample of basic django application
+
+
+Do these:
+1. pip install -r requirement.txt
+2. python manage.py makemigrations *appname
+3. python manage.py runserver

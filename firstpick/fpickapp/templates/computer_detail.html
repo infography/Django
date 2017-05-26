@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+{%block content%}
+<div class="row">
+	{%for item in items%}
+	<div class="col-md-4">
+		<div class="card" style="width: 40rem;">
+		 <img class="card-img-top" src="{{MEDIA_URL}}{{item.image}}" alt="Card image cap" style='height: 100%; width: 100%; object-fit: contain'>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="card" style="width: 40rem;">
+		<h4 class="card-title">{{item.name}}</h4>
+		    <p class="card-text"><strong>Processor: </strong>{{item.feature.processor}}</p>
+		    <p class="card-text"><strong>RAM:</strong> {{item.feature.ram}}</p>
+		    <p class="card-text"><strong>HDD:</strong> {{item.feature.inbuilt_hdd}}</p>
+		    <p class="card-text"><strong>OS:</strong> {{item.feature.os}}</p>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+				<div class="card" style="width: 40rem;">
+					<a href="{% url 'addtocart' item.computer_type|lower item.id  %}" class="btn btn-primary">ADD TO CART</a>
+				</div>
+	</div>
+	{%endfor%}
+</div>
+{%endblock%}

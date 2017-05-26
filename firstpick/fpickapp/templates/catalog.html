@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+{%block content%}
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+    <h1 class="display-3">Laptops</h1>
+    <p class="lead">Explore here to find the best deal of laoptops you want to buy</p>
+  </div>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+    {%for item in items %}
+      <div class="col-md-3">
+      <div class="card" style="width: 20rem;">
+      <a href="{% url 'computerdetail' item.id  %}"><img class="card-img-top" src="{{MEDIA_URL}}{{item.image}}" alt="Card image cap" style='height: 100%; width: 100%; object-fit: contain'></a>
+      <div class="card-block">
+        <h4 class="card-title">{{item.name}}</h4>
+        <p class="card-text">{{item.price}}</p>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+
+{%endblock%}
